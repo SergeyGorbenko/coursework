@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw;
+    height: 50px;
+    background-color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header > p {
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+section.top {
+    width: 100vw;
+    height:300px;
+    text-align: center;
+}
+
+section.middle {
+    width: 100vw;
+    display: flex;
+}
+
+.photo_div {
+    width: 30vw;
+    height: 400px;
+    margin-left: 2vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: beige;
+    box-shadow: 1px 1px 7px 0 gray;
+    cursor: pointer;
+}
+
+.photo_top {
+    width: 30vw;
+}
+
+.photo_footer > h3 {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 25px;
+    position: static;
+}
+
+.photo_footer .text {
+    margin: 10px;
+    font-size: 15px;
+}
+
+.photo {
+    width: 30vw;
+    height: 170px;
+}
+
+.more_img_btn {
+    text-transform: uppercase;
+    color: red;
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.more_img_btn:focus,
+.more_img_btn:hover {
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+section.footer {
+    width: 100vw;
+    height: 100px;
+    margin-top: 50px;
+    background-color: gray;
+}
