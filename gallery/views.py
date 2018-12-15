@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'index.html', )
+    return render(request, 'html/index.html', )
 
 
 def gallery(request, gallery):
