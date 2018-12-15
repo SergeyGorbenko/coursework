@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +6,20 @@
     <title>Photo Django Gallery</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <header>
     <p>Photo Django Gallery</p>
 </header>
 <section class="top">
-    <img src="../img/gallery.jpg" alt="Photo Django Gallery" title="Photo Django Gallery">
+    <img src="{% static 'img/gallery.jpg' %}" alt="Photo Django Gallery" title="Photo Django Gallery">
 </section>
 <section class="container-fluid middle">
     <div class="row d-flex">
         <div class="photo_div">
             <div class="photo_top">
-                <img src="../img/gallery.jpg" alt="Gallery Image" title="Gallery Image" class="photo">
+                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
             </div>
             <div class="photo_footer">
                 <h3>Photo Header Text</h3>
@@ -31,7 +32,7 @@
         </div>
         <div class="photo_div">
            <div class="photo_top">
-                <img src="../img/gallery.jpg" alt="Gallery Image" title="Gallery Image" class="photo">
+                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
             </div>
             <div class="photo_footer">
                 <h3>Photo Header Text</h3>
@@ -44,7 +45,7 @@
         </div>
         <div class="photo_div">
             <div class="photo_top">
-                <img src="../img/gallery.jpg" alt="Gallery Image" title="Gallery Image" class="photo">
+                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
             </div>
             <div class="photo_footer">
                 <h3>Photo Header Text</h3>
@@ -57,7 +58,7 @@
         </div>
         <div class="photo_div">
            <div class="photo_top">
-                <img src="../img/gallery.jpg" alt="Gallery Image" title="Gallery Image" class="photo">
+                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
             </div>
             <div class="photo_footer">
                 <h3>Photo Header Text</h3>
@@ -70,7 +71,7 @@
         </div>
         <div class="photo_div">
            <div class="photo_top">
-                <img src="../img/gallery.jpg" alt="Gallery Image" title="Gallery Image" class="photo">
+                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
             </div>
             <div class="photo_footer">
                 <h3>Photo Header Text</h3>
@@ -83,7 +84,7 @@
         </div>
         <div class="photo_div">
             <div class="photo_top">
-                <img src="../img/gallery.jpg" alt="Gallery Image" title="Gallery Image" class="photo">
+                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
             </div>
             <div class="photo_footer">
                 <h3>Photo Header Text</h3>
@@ -108,6 +109,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-<script src="../js/main.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
