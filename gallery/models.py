@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 
 class Gallery_unit(models.Model):
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=40, unique=True)
     description = models.TextField()
     create = models.DateTimeField(auto_now_add=True)
     link = models.CharField(max_length=40, null=True, blank=True)
