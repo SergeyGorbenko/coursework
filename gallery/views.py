@@ -21,13 +21,18 @@ def home(request):
 
 
 def gallery(request, gallery):
+    g = Gallery_unit.objects.get(link=gallery)
+
     if request.method == 'POST':
         form = LoadPhoto(request.POST)
         if form.is_valid():
-            pass
+            photo = Photo(name=form.cleaned_data['photo'].name, photo=form.cleaned_data['photo'], gallery=g)
+            photo.save()
 
+    elif request.GET.get("photo_name"):
+        photo = Photo.objects.get(link=request.GET.get("photo_name"))
+        photo.delete()
 
-    g = Gallery_unit.objects.get(link=gallery)
     photos = Photo.objects.filter(gallery=g).all()
     context = {'gallery': g, 'photos': photos, 'form': LoadPhoto()}
     return render(request, 'collection.html', context=context)
