@@ -9,7 +9,9 @@ def home(request):
         if form.is_valid():
             gallery = Gallery_unit(name=form.cleaned_data['name'], description=form.cleaned_data['description'])
             gallery.save()
-
+    elif request.GET.get("gallery_name"):
+        gallery = Gallery_unit.objects.get(link=request.GET.get("gallery_name"))
+        gallery.delete()
     gallerys = Gallery_unit.objects.all()
     photos = []
     for g in gallerys:
@@ -23,6 +25,7 @@ def gallery(request, gallery):
         form = LoadPhoto(request.POST)
         if form.is_valid():
             pass
+
 
     g = Gallery_unit.objects.get(link=gallery)
     photos = Photo.objects.filter(gallery=g).all()
