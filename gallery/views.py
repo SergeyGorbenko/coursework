@@ -24,7 +24,8 @@ def gallery(request, gallery):
     g = Gallery_unit.objects.get(link=gallery)
 
     if request.method == 'POST':
-        form = LoadPhoto(request.POST)
+        form = LoadPhoto(request.POST, request.FILES)
+        print(form.is_valid())
         if form.is_valid():
             photo = Photo(name=form.cleaned_data['photo'].name, photo=form.cleaned_data['photo'], gallery=g)
             photo.save()
@@ -35,4 +36,11 @@ def gallery(request, gallery):
 
     photos = Photo.objects.filter(gallery=g).all()
     context = {'gallery': g, 'photos': photos, 'form': LoadPhoto()}
+    return render(request, 'collection.html', context=context)
+
+
+def photos(request, gallery):
+    g = Gallery_unit.objects.get(link=gallery)
+    photos = Photo.objects.filter(gallery=g).all()
+    context = {'photos': photos}
     return render(request, 'collection.html', context=context)
