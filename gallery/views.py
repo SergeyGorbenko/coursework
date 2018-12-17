@@ -7,7 +7,8 @@ def home(request):
     if request.method == 'POST':
         form = CreateGallery(request.POST)
         if form.is_valid():
-            pass
+            gallery = Gallery_unit(name=form.name,description=form.description)
+            gallery.save()
 
     gallerys = Gallery_unit.objects.all()
     photos = []
