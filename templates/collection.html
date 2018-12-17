@@ -67,7 +67,7 @@
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="/gallerys/{{ gallery.link }}/" method="post">
+            <form action="/gallerys/{{ gallery.link }}/" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Photo</h5>
