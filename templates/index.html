@@ -17,84 +17,14 @@
 </section>
 <section class="container-fluid middle">
     <div class="row d-flex">
-        <div class="photo_div">
-            <div class="photo_top">
-                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
+        {% for gallery in gallerys %}
+            <div class="photo_div">
+                <h3>{{ gallery.name }}</h3>
+                <p class="text" align="justify">{{ gallery.description }}</p>
+                <hr class="hr"/>
+                <a class="more_img_btn" href="{{ gallery.link }}">More Images</a>
             </div>
-            <div class="photo_footer">
-                <h3>Photo Header Text</h3>
-                <p class="text" align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-                <hr/>
-                <p class="more_img_btn">More Images</p>
-            </div>
-        </div>
-        <div class="photo_div">
-           <div class="photo_top">
-                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
-            </div>
-            <div class="photo_footer">
-                <h3>Photo Header Text</h3>
-                <p class="text" align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-                <hr/>
-                <p class="more_img_btn">More Images</p>
-            </div>
-        </div>
-        <div class="photo_div">
-            <div class="photo_top">
-                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
-            </div>
-            <div class="photo_footer">
-                <h3>Photo Header Text</h3>
-                <p class="text" align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-                <hr/>
-                <p class="more_img_btn">More Images</p>
-            </div>
-        </div>
-        <div class="photo_div">
-           <div class="photo_top">
-                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
-            </div>
-            <div class="photo_footer">
-                <h3>Photo Header Text</h3>
-                <p class="text" align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-                <hr/>
-                <p class="more_img_btn">More Images</p>
-            </div>
-        </div>
-        <div class="photo_div">
-           <div class="photo_top">
-                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
-            </div>
-            <div class="photo_footer">
-                <h3>Photo Header Text</h3>
-                <p class="text" align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-                <hr/>
-                <p class="more_img_btn">More Images</p>
-            </div>
-        </div>
-        <div class="photo_div">
-            <div class="photo_top">
-                <img src="{% static 'img/gallery.jpg' %}" alt="Gallery Image" title="Gallery Image" class="photo">
-            </div>
-            <div class="photo_footer">
-                <h3>Photo Header Text</h3>
-                <p class="text" align="justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book.</p>
-                <hr/>
-                <p class="more_img_btn">More Images</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 <section class="footer">
