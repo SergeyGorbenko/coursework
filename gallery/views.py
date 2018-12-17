@@ -15,5 +15,7 @@ def home(request):
 
 
 def gallery(request, gallery):
-
-    return render(request, 'collection.html', )
+    g = Gallery_unit.objects.get(name=gallery)
+    photos = Photo.objects.filter(gallery=g).all()
+    context = {'gallery': g, 'photos': photos}
+    return render(request, 'collection.html', context=context)
