@@ -35,7 +35,7 @@ section.middle {
 
 .photo_div {
     width: 30vw;
-    height: 200px;
+    height: 180px;
     margin-left: 2vw;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -69,7 +69,7 @@ section.middle {
 
 .hr {
     position: absolute;
-    top: 150px;
+    top: 125px;
     width: 100%;
     height: 1px;
 }
@@ -80,7 +80,7 @@ section.middle {
     font-weight: 300;
     margin-left: 20px;
     position: absolute;
-    top: 170px;
+    top: 150px;
 }
 
 .more_img_btn:focus,
@@ -119,4 +119,15 @@ section.footer {
 
 .btn_gallery {
     text-align: center;
+}
+
+.delete_btn {
+    margin-top: 20px;
+}
+
+.delete_btn  > button,
+.delete_btn  > button:focus,
+.delete_btn  > button:hover {
+    background-color: red;
+    border: none;
 }
