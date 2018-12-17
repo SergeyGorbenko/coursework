@@ -11,11 +11,11 @@
 <body>
 <section class="container-fluid">
     <div class="row">
-        <p class="title">{{ name }}</p>
-        <p class="collection_text" align="justify">{{ description }}</p>
+        <p class="title col-12">{{ gallery.name }}</p>
+        <p class="collection_text col-12" align="justify">{{ gallery.description }}</p>
         {% for photo in photos %}
             <div class="col-6">
-                <img src="{% photo.photo %}" alt="Collection Image" title="Collection Image"
+                <img src="{{ photo.photo.url }}" alt="Collection Image" title="Collection Image"
                      class="collection_img">
             </div>
         {% endfor %}
