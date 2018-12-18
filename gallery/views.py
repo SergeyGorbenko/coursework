@@ -16,7 +16,7 @@ def home(request):
     photos = []
     for g in gallerys:
         photos += [Photo.objects.filter(gallery=g).first()]
-    context = {'gallerys': gallerys, 'photos': photos, 'form': CreateGallery()}
+    context = {'gallerys': gallerys, 'first_photo': photos[0], 'photos': photos, 'form': CreateGallery()}
     return render(request, 'index.html', context=context)
 
 
