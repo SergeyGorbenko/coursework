@@ -43,4 +43,4 @@ def photos(request, gallery):
     g = Gallery_unit.objects.get(link=gallery)
     photos = Photo.objects.filter(gallery=g).all()
     context = {'photos': photos}
-    return render(request, 'collection.html', context=context)
+    return render(request, 'full_screen.html', context=context)

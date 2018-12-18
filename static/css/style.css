@@ -126,9 +126,22 @@ section.footer {
     margin-top: 20px;
 }
 
-.delete_btn  > button,
-.delete_btn  > button:focus,
-.delete_btn  > button:hover {
+.delete_btn > button,
+.delete_btn > button:focus,
+.delete_btn > button:hover {
     background-color: red;
     border: none;
+}
+
+.photos {
+    width: 900px !important;
+    height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+}
+
+.black_body {
+    background-color: black;
 }

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+<script>
+    function photos_show() {
+        location.href += "photos/";
+    }
+</script>
 <section class="container-fluid">
     <div class="row">
         <p class="title col-12">{{ gallery.name }}</p>
@@ -25,7 +30,7 @@
         </div>
         {% for photo in photos %}
             <div class="col-6">
-                <img src="{{ photo.photo.url }}" alt="Collection Image" title="Collection Image"
+                <img src="{{ photo.photo.url }}" onclick="photos_show();" alt="Collection Image" title="Collection Image"
                      class="collection_img">
             </div>
         {% endfor %}
