@@ -17,9 +17,9 @@
         </button>
     </div>
     <div class="col-2">
-        <form action="/gallerys/{{ gallery.link }}/photos/" method="get">
+        <form action="/gallerys/{{ link }}/photos/" method="get">
             <label for="delete_photo_input"></label>
-            <input hidden="hidden" name="photo_src" id="delete_photo_input">
+            <input hidden="hidden" name="photo_name" id="delete_photo_input">
             <button type="submit" class="btn btn-primary delete_btn" onclick="delete_photo();">Delete photo</button>
         </form>
     </div>
@@ -75,7 +75,9 @@
 
     function delete_photo() {
         let delete_photo_input = $("#delete_photo_input");
-        delete_photo_input.val($(".active").children("img").attr("src"));
+        let img_url = $(".active").children("img").attr("src").split("/");
+        let filename = img_url[3];
+        delete_photo_input.val(filename);
     }
 
     $(function () {
