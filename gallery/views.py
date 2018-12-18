@@ -30,16 +30,15 @@ def gallery(request, gallery):
             photo = Photo(name=form.cleaned_data['photo'].name, photo=form.cleaned_data['photo'], gallery=g)
             photo.save()
 
-    elif request.GET.get("photo_name"):
-        photo = Photo.objects.get(link=request.GET.get("photo_name"))
-        photo.delete()
-
     photos = Photo.objects.filter(gallery=g).all()
     context = {'gallery': g, 'photos': photos, 'form': LoadPhoto()}
     return render(request, 'collection.html', context=context)
 
 
 def photos(request, gallery):
+    if request.GET.get("photo_name"):
+        photo = Photo.objects.get(name=request.GET.get("photo_name"))
+        photo.delete()
     g = Gallery_unit.objects.get(link=gallery)
     photos = Photo.objects.filter(gallery=g).all()
     context = {'photos': photos}
