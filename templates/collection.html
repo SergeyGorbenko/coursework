@@ -30,7 +30,8 @@
         </div>
         {% for photo in photos %}
             <div class="col-6">
-                <img src="{{ photo.photo.url }}" onclick="photos_show();" alt="Collection Image" title="Collection Image"
+                <img src="{{ photo.photo.url }}" onclick="photos_show();" alt="Collection Image"
+                     title="Collection Image"
                      class="collection_img">
             </div>
         {% endfor %}
@@ -106,6 +107,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

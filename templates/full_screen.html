@@ -10,17 +10,17 @@
 </head>
 <body class="black_body">
 <header class="d-flex">
-    <div class="col-8"></div>
+    <div class="col-7"></div>
     <div class="col-2">
         <button type="submit" class="btn btn-primary delete_btn" id="download_btn">
             Download
         </button>
     </div>
-    <div class="col-1">
-        <form action="" method="get">
-            <label for="delete_btn"></label>
-            <input hidden="hidden" name="delete" id="delete_btn">
-            <button type="submit" class="btn btn-primary delete_btn">Delete</button>
+    <div class="col-2">
+        <form action="/gallerys/{{ gallery.link }}/photos/" method="get">
+            <label for="delete_photo_input"></label>
+            <input hidden="hidden" name="photo_src" id="delete_photo_input">
+            <button type="submit" class="btn btn-primary delete_btn" onclick="delete_photo();">Delete photo</button>
         </form>
     </div>
     <div class="col-1">
@@ -73,6 +73,11 @@
         document.body.removeChild(element);
     }
 
+    function delete_photo() {
+        let delete_photo_input = $("#delete_photo_input");
+        delete_photo_input.val($(".active").children("img").attr("src"));
+    }
+
     $(function () {
         document.getElementById("download_btn").addEventListener("click", function () {
             let img_url = $(".active").children("img").attr("src").split("/");
@@ -81,5 +86,4 @@
         }, false);
     });
 </script>
-<script src="{% static 'js/main.js' %}"></script>
 </html>
