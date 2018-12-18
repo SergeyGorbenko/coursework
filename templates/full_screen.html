@@ -9,10 +9,28 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body class="black_body">
+<header class="d-flex">
+    <div class="col-8"></div>
+    <div class="col-2">
+        <button type="submit" class="btn btn-primary delete_btn" id="download_btn">
+            Download
+        </button>
+    </div>
+    <div class="col-1">
+        <form action="" method="get">
+            <label for="delete_btn"></label>
+            <input hidden="hidden" name="delete" id="delete_btn">
+            <button type="submit" class="btn btn-primary delete_btn">Delete</button>
+        </form>
+    </div>
+    <div class="col-1">
+        <button type="button" class="btn btn-primary delete_btn" onclick="go_back();">Close</button>
+    </div>
+</header>
 <section id="carouselControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100 photos" src="{{ photos.0.photo.url }}" alt="Collection slide">
+            <img class="d-block w-100 photos" src="{{ first_photo.photo.url }}" alt="Collection slide">
         </div>
         {% for photo in photos %}
             <div class="carousel-item">
@@ -39,5 +57,29 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+<script>
+    function go_back() {
+        let url = location.href.split("/")
+        location.href = url[0] + "/" + url[1] + "/" + url[2] + "/" + url[3] + "/" + url[4] + "/";
+    }
+
+    function download(filename) {
+        let element = document.createElement('a');
+        element.setAttribute('href', $(".active").children("img").attr("src"));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    $(function () {
+        document.getElementById("download_btn").addEventListener("click", function () {
+            let img_url = $(".active").children("img").attr("src").split("/");
+            let filename = img_url[3];
+            download(filename);
+        }, false);
+    });
+</script>
 <script src="{% static 'js/main.js' %}"></script>
 </html>
