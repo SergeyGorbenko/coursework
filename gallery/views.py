@@ -41,5 +41,9 @@ def photos(request, gallery):
         photo.delete()
     g = Gallery_unit.objects.get(link=gallery)
     photos = Photo.objects.filter(gallery=g).all()
-    context = {'photos': photos}
+    context = {'photos': photos, 'link': g.link}
     return render(request, 'full_screen.html', context=context)
+
+
+def first_page(request):
+    return render(request, 'home.html')
