@@ -1,6 +1,7 @@
 import os
 
 from django.db import IntegrityError
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from coursework import settings
@@ -53,4 +54,4 @@ def photos(request, gallery):
 
 
 def first_page(request):
-    return render(request, 'home.html')
+    return HttpResponseRedirect("/gallerys/")
