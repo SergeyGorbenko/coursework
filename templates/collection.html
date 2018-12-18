@@ -16,14 +16,19 @@
 </script>
 <section class="container-fluid">
     <div class="row">
-        <p class="title col-12">{{ gallery.name }}</p>
+        <a class="a_without_style text-dark" href="/gallerys/"><p class="title col-12">{{ gallery.name }}</p></a>
         <p class="collection_text col-12" align="justify">{{ gallery.description }}</p>
-        <div class="btn_gallery col-6">
+        <div class="btn_gallery col-4">
+            <button type="button" class="btn btn-primary" onclick="location.href = /gallerys/;">
+                Back
+            </button>
+        </div>
+        <div class="btn_gallery col-4">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPhotoModal">
                 Add photo
             </button>
         </div>
-        <div class="btn_gallery delete_btn col-6">
+        <div class="btn_gallery delete_btn col-4">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteGalleryModal">
                 Delete gallery
             </button>

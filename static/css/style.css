@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+body {
+    padding-right: 0 !important;
+}
+
 html {
     overflow-x: hidden;
 }
@@ -15,7 +19,7 @@ header {
     margin-bottom: 20px;
 }
 
-header > p {
+header > a > p {
     color: white;
     font-size: 25px;
     text-transform: uppercase;
@@ -111,7 +115,7 @@ section.footer {
 }
 
 .collection_img {
-    width: 45vw;
+    width: 100%;
     height: 400px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -143,4 +147,11 @@ section.footer {
 
 .black_body {
     background-color: black;
+}
+
+.a_without_style,
+.a_without_style:focus,
+.a_without_style:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
